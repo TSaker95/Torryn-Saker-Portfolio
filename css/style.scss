@@ -1,0 +1,427 @@
+@import 'mixins';
+@import 'menu';
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#img1 {
+  padding: 10px;
+  width: 50%;
+    border-radius: 100% 100% 100% 100%;
+    box-shadow: 10px 10px 100px rgba(255, 255, 255, 0.952);
+    overflow: hidden;
+    
+
+    &:hover {
+      transform: scale(0.9);
+      opacity: 0.5;
+      box-shadow: 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0);
+    }
+
+    
+}
+
+
+
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  
+    
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 100px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+nav { 
+  @include full-width-centered();
+  background-color:rgb(58, 1, 1);
+  height: 35px;
+  border-width: 5px;
+    border-bottom: 0px;
+  border-color: black;
+  border-style: solid;
+ }
+
+body
+{
+  margin: 0;
+  padding: 0;
+  
+  /* make it look decent enough */
+  background: #232323;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: tomato;
+}
+
+
+.topnav {
+    background-color: rgb(253, 1, 1);
+    overflow: center;
+    border-width: 5px;
+    border-bottom: 0px;
+  border-color: black;
+  border-style: solid;
+  }
+  
+
+  .topnav a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-width: 1px;
+    transition: 1.5s;
+    
+  border-color: black;
+  border-style: solid
+  }
+  
+ 
+  .nav:hover {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404;
+  }
+  
+  .nav1:hover {
+    background-color: rgb(7, 50, 243);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404;
+  }
+  
+  .nav2:hover {
+    background-color: rgb(54, 243, 7);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404;
+  }
+  .nav3:hover {
+    background-color: rgb(243, 219, 7);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404;
+  }
+ 
+  .topnav a.active {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 0, 157);
+  }
+
+
+
+#page {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+ 
+
+  
+
+    header {
+        @include full-width-centered();
+        background-color: rgb(255, 255, 255);
+        font-size: 100px;
+        text-align: center;
+        outline: 100px bold green;
+        color: White;
+        border-width: 5px;
+        border-color: rgb(0, 0, 0);
+  border-style: solid;
+  text-shadow: 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404;
+    transition: 5s;
+}
+
+    header:hover {
+        text-shadow: 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff;
+    }
+
+    #heading-2 {
+      background-color: rgb(255, 0, 0);
+      font-size: 30px;
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-variant-caps: all-petite-caps;
+      border-width: 5px;
+      border-color: black;
+      border-style: solid;
+     }
+ #p {
+  
+  border: 2px solid rgb(9, 255, 0);
+  width: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 10px 10px 10px;
+  background-color: black;
+  text-shadow: 10px 10px 10px #0804ff;
+
+   }
+
+    main {
+        @include full-width-centered();
+        height: 600px;
+        background-color: rgba(70, 66, 66, 0.904);
+        vertical-align: center;
+    }
+
+section {
+    @include full-width-centered; 
+    height: 300px; 
+
+&.sign-up {
+    background-color: orange;
+    
+}
+&.feature-1 {
+  
+    background-color: rgb(17, 0, 255);
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    background-image: radial-gradient(circle at 50%, rgba(0, 255, 242, 0.973), rgb(32, 10, 131));
+}
+
+&.feature-1 a {
+  @include full-width-centered; 
+
+}
+
+&.feature-2 {
+   
+    background-color: rgb(255, 0, 0);
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    background-image: radial-gradient(circle at 50%, rgb(179, 255, 0), rgb(255, 0, 0));
+}
+&.feature-3 {
+    background-color: rgb(5, 67, 236);
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    background-image: radial-gradient(circle at 50%, rgb(3, 0, 0), rgba(37, 37, 5, 0.5), rgba(255, 255, 255, 0.322));
+}
+
+
+}
+
+.sign-up {
+  
+  border-color: black;
+border-style: solid;
+border-width: 5px;
+}
+
+
+
+/* Mobile Styles (screen widths less than or equal to 400px) */
+
+@media only screen and (max-width: 400px) {
+body {
+    background-color: rgba(255, 255, 255, 0.39);
+}
+ header {
+     font-size: 150%;
+ }
+ #menuToggle {
+ left: -44%;
+ top: 11%;
+}
+.sign-up {
+  order:1;
+
+
+      }
+    }
+// works without Sass
+
+
+/* Tablet style */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+body {
+  background-color: rgba(255, 255, 255, 0.39);
+
+}
+section {
+    width: 50%;
+}
+
+#menuToggle {
+    left: -47%;
+    top: 11%;
+   }
+  //  .sign-up {
+  //   order:;
+}
+
+/* desktop*/
+@media only screen and (min-width: 961px)  {
+    body {
+      background-color: rgba(255, 255, 255, 0.39);
+    }
+header {
+  height: 120px;
+  
+
+}
+#menuToggle {
+    left: -48.5%;
+    top: 11%;
+   }
+    .feature-1, .feature-2, .feature-3 {
+        width: 33.33%;
+    }
+    .sign-up {
+        order:2;
+        
+    }
+    main {
+        order:2;
+    }
+  }
+
+  #footer {
+    font-size: 1vw;
+    font-style: bold;
+    font-color: rgba(245, 245, 220, 0.068);
+    background-color: rgb(58, 1, 1);
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+  }
