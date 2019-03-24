@@ -33,6 +33,22 @@ box-sizing: border-box;
    
 }
 
+table, th, td {
+  border: 2px solid black;
+  font-size: 40px;
+  padding: 2px ;
+}
+
+table#t01 tr:nth-child(even) {
+  background-color: rgb(95, 6, 6);
+}
+table#t01 tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.863);
+}
+table#t01 th {
+  color: white;
+  background-color: black;
+}
 
 #img2 {
   padding: 1px;
@@ -316,12 +332,14 @@ a:hover
         border-color: rgb(0, 0, 0);
   border-style: solid;
   text-shadow: 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404, 0px 0px 10px #ff0404;
-    transition: 5s;
+    transition: 1s;
 }
 
     header:hover {
         text-shadow: 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff, 0px 0px 50px #0804ff;
-    }
+        transform: scale(1.1);
+        
+      }
 
     #heading-2 {
       background-color: rgb(255, 0, 0);
@@ -447,6 +465,20 @@ a:hover
   border-style: solid;
   background-image: radial-gradient(circle at 50%, rgba(0, 162, 255, 0.959), rgb(0, 0, 0));
 }
+
+.main4 {
+  @include full-width-centered();
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  vertical-align: center;
+  border-width: 5px;
+  
+border-color: black;
+border-style: solid;
+background-image: radial-gradient(circle at 50%, rgba(0, 162, 255, 0.959), rgb(0, 0, 0));
+}
+
+
 
 section {
     @include full-width-centered; 
@@ -588,7 +620,11 @@ header {
       order:2;
       width: 50%;
   }
-   
+  .main4 {
+    order:2;
+    width: 100%;
+    height: auto;
+}
   
   }
 
