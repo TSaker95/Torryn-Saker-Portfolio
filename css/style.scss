@@ -1,5 +1,13 @@
 @import 'mixins';
 @import 'menu';
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(359deg);
+  }
+}
 
 * {
 margin: 0;
@@ -7,24 +15,44 @@ padding: 0;
 box-sizing: border-box;
 }
 
+
 #img1 {
   padding: 10px;
   width: 50%;
     border-radius: 100% 100% 100% 100%;
     box-shadow: 10px 10px 100px rgba(255, 255, 255, 0.952);
     overflow: hidden;
-    
-
-    &:hover {
+      
+     &:hover {
       transform: scale(0.9);
-      opacity: 0.5;
-      box-shadow: 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0);
+      opacity: 0.9;
+      box-shadow: 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0) ;
+      animation: rotation 3s infinite linear;
+      overflow: hidden;
     }
-
-    
+   
 }
 
 
+#img2 {
+  padding: 1px;
+  width: 100%;
+    border-radius: 10% 10% 10% 10%;
+    box-shadow: 10px 10px 100px rgba(255, 255, 255, 0.952);
+    overflow: hidden;
+    border-width: auto;
+  border-color: black;
+  border-style: solid;
+  
+      
+     &:hover {
+      transform: scale(0.9);
+      opacity: 0.9;
+      box-shadow: 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0) ;
+      overflow: hidden;
+    }
+   
+}
 
 
 
@@ -39,6 +67,9 @@ box-sizing: border-box;
   
   -webkit-user-select: none;
   user-select: none;
+
+
+  
 }
 
 #menuToggle input
@@ -56,6 +87,8 @@ box-sizing: border-box;
   z-index: 2; /* and place it over the hamburger */
   
   -webkit-touch-callout: none;
+
+  
 }
 
 /*
@@ -82,6 +115,8 @@ box-sizing: border-box;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
+
+              
 }
 
 #menuToggle span:first-child
@@ -110,6 +145,7 @@ box-sizing: border-box;
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
+  
 }
 
 /*
@@ -123,6 +159,7 @@ box-sizing: border-box;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 100px;
+  box-shadow: 10px 10px 10px rgb(60, 255, 0);
   
   background: #ededed;
   list-style-type: none;
@@ -133,12 +170,25 @@ box-sizing: border-box;
   transform: translate(-100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
 
+  
+}
+#h1 {
+  align: center;
+}
 #menu li
 {
-  padding: 10px 0;
+  padding: 10px 0px;
   font-size: 22px;
+  
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+   padding: 10px;
+    overflow: hidden;
+  }
 }
 
 /*
@@ -147,6 +197,8 @@ box-sizing: border-box;
 #menuToggle input:checked ~ ul
 {
   transform: none;
+  
+  
 }
 
 
@@ -183,7 +235,7 @@ a
 
 a:hover
 {
-  color: tomato;
+  color: rgb(255, 0, 0);
 }
 
 
@@ -279,8 +331,8 @@ a:hover
       border-color: black;
       border-style: solid;
      }
- #p {
-  
+ .p {
+  font-size: 200%;
   border: 2px solid rgb(9, 255, 0);
   width: auto;
   margin-top: auto;
@@ -290,15 +342,75 @@ a:hover
   padding: 10px 10px 10px 10px;
   background-color: black;
   text-shadow: 10px 10px 10px #0804ff;
+ }
+  p:hover {
+    transform: scale(1.1);
+    opacity: 1000;
+    box-shadow: 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0), 10px 10px 100px rgb(60, 255, 0);
+    // animation: rotation 3s infinite linear;
+    overflow: hidden;
 
    }
+
+   .p1 {
+    font-size: 200%;
+    border: 2px solid rgb(255, 0, 0);
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(255, 255, 255);
+    text-shadow: 10px 10px 10px #1d04ff;
+   
+    &:hover {
+      transform: scale(1.1);
+      opacity: 1000;
+      box-shadow: 10px 10px 100px rgb(0, 47, 255), 10px 10px 100px rgb(0, 47, 255), 10px 10px 100px rgb(0, 47, 255);
+      // animation: rotation 3s infinite linear;
+      overflow: hidden;
+  
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+   .image-with-caption {
+    position: relative;
+   }
+
 
     main {
         @include full-width-centered();
         height: 600px;
         background-color: rgba(70, 66, 66, 0.904);
         vertical-align: center;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-width: 5px;
+    border-color: black;
+    border-style: solid;
     }
+
+
+    .main1 {
+      @include full-width-centered();
+      height: auto;
+      background-color: rgb(180, 1, 1);
+      vertical-align: center;
+      border-width: 5px;
+    border-color: black;
+    border-style: solid;
+  }
 
 section {
     @include full-width-centered; 
@@ -348,6 +460,17 @@ border-style: solid;
 border-width: 5px;
 }
 
+#footer {
+  font-size: 5vw;
+  font-style: bold;
+  font-color: rgba(245, 245, 220, 0.068);
+  background-color: rgb(58, 1, 1);
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+  
+}
+
 
 
 /* Mobile Styles (screen widths less than or equal to 400px) */
@@ -365,8 +488,9 @@ body {
 }
 .sign-up {
   order:1;
-
-
+      }
+      #footer {
+        font-size: 5vw;
       }
     }
 // works without Sass
@@ -382,10 +506,16 @@ section {
     width: 50%;
 }
 
+.sign-up {
+  order:1;
+      }
 #menuToggle {
     left: -47%;
     top: 11%;
    }
+   #footer {
+    font-size: 5vw;
+  }
   //  .sign-up {
   //   order:;
 }
@@ -397,9 +527,11 @@ section {
     }
 header {
   height: 120px;
+   
   
-
 }
+
+
 #menuToggle {
     left: -48.5%;
     top: 11%;
@@ -411,17 +543,16 @@ header {
         order:2;
         
     }
-    main {
+    .main1 {
         order:2;
+        width: 50%;
     }
+    .main2 {
+      order:2;
+      width: 50%;
+  }
+   
+  
   }
 
-  #footer {
-    font-size: 1vw;
-    font-style: bold;
-    font-color: rgba(245, 245, 220, 0.068);
-    background-color: rgb(58, 1, 1);
-    border-width: 5px;
-    border-color: black;
-    border-style: solid;
-  }
+ 
